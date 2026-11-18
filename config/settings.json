@@ -1,0 +1,6 @@
+{
+  "top_n": 3,
+  "features": {
+    "ignore_case": true
+  }
+}
