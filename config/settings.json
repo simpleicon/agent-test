@@ -1,6 +1,8 @@
 {
   "top_n": 3,
   "features": {
-    "ignore_case": true
+    "ignore_case": true,
+    "stopwords": ["그리고", "또는",],
+    "min_length": 2
   }
 }
