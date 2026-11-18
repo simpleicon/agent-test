@@ -16,6 +16,8 @@ from textkit import count_word
 count_word('사과 배 사과')  # {'사과': 2, '배': 1}
 ```
 
+대소문자를 무시할 때 `lower()` 대신 `casefold()`를 쓰는데, `casefold()`는 'ß'를 'ss'로 바꾸는 등 유니코드 case folding을 따라 대소문자 무시 비교에 더 알맞기 때문입니다. 참고: https://docs.python.org/3/library/stdtypes.html#str.casefold
+
 `textkit.report`의 `top_words`는 가장 많이 나온 단어를 n개까지 돌려주고, `format_report`는 그 결과를 줄마다 "단어: 횟수"로 보여 줍니다.
 
 ## 시험
