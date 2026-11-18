@@ -1,6 +1,6 @@
 import unittest
 
-from textkit import count_word
+from textkit import count_sentences, count_word
 from textkit.report import format_report, top_words
 
 
@@ -13,6 +13,20 @@ class CountWordTest(unittest.TestCase):
 
     def test_empty_text(self) -> None:
         self.assertEqual(count_word(''), {})
+
+
+class CountSentencesTest(unittest.TestCase):
+    def test_counts_each_terminator(self) -> None:
+        self.assertEqual(count_sentences('안녕. 뭐해? 좋아!'), 3)
+
+    def test_empty_text(self) -> None:
+        self.assertEqual(count_sentences(''), 0)
+
+    def test_no_terminator(self) -> None:
+        self.assertEqual(count_sentences('끝이 없는 글'), 0)
+
+    def test_repeated_marks_count_once(self) -> None:
+        self.assertEqual(count_sentences('정말?! 그래...'), 2)
 
 
 class ReportTest(unittest.TestCase):

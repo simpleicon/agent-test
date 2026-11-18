@@ -11,3 +11,11 @@ def count_word(text: str) -> dict[str, int]:
     for word in WORD.findall(text.lower()):
         counts[word] = counts.get(word, 0) + 1
     return counts
+
+
+SENTENCE = re.compile(r'[^.?!]*[.?!]+')
+
+
+def count_sentences(text: str) -> int:
+    """Number of sentences, each ending in '.', '?' or '!'."""
+    return sum(1 for m in SENTENCE.findall(text) if m.strip('.?! \t\r\n'))
