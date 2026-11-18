@@ -1,18 +1,18 @@
 import unittest
 
-from textkit import count_word
+from textkit import count_words
 from textkit.report import format_report, top_words
 
 
-class CountWordTest(unittest.TestCase):
+class CountWordsTest(unittest.TestCase):
     def test_counts_each_word(self) -> None:
-        self.assertEqual(count_word('사과 배 사과'), {'사과': 2, '배': 1})
+        self.assertEqual(count_words('사과 배 사과'), {'사과': 2, '배': 1})
 
     def test_ignores_case(self) -> None:
-        self.assertEqual(count_word('Apple apple APPLE'), {'apple': 3})
+        self.assertEqual(count_words('Apple apple APPLE'), {'apple': 3})
 
     def test_empty_text(self) -> None:
-        self.assertEqual(count_word(''), {})
+        self.assertEqual(count_words(''), {})
 
 
 class ReportTest(unittest.TestCase):

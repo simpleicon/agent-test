@@ -8,12 +8,12 @@ textkit은 글에서 단어를 세는 작은 연습용 모듈입니다.
 
 ## 사용법
 
-`count_word`는 글을 받아 단어별 등장 횟수를 돌려줍니다. 대소문자는 구분하지 않습니다.
+`count_words`는 글을 받아 단어별 등장 횟수를 돌려줍니다. 대소문자는 구분하지 않습니다.
 
 ```python
-from textkit import count_word
+from textkit import count_words
 
-count_word('사과 배 사과')  # {'사과': 2, '배': 1}
+count_words('사과 배 사과')  # {'사과': 2, '배': 1}
 ```
 
 `textkit.report`의 `top_words`는 가장 많이 나온 단어를 n개까지 돌려주고, `format_report`는 그 결과를 줄마다 "단어: 횟수"로 보여 줍니다.
